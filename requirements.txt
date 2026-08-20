@@ -1,0 +1,28 @@
+# Core pipeline
+pipecat-ai[silero,groq,local]>=0.0.50
+
+# STT - 4x faster than vanilla whisper
+faster-whisper>=1.0.0
+
+# TTS - natural, offline, CPU-friendly
+kokoro>=0.9.4
+soundfile
+
+# Audio
+sounddevice
+numpy
+scipy
+torch
+
+# Existing system tools (unchanged)
+pycaw
+screen-brightness-control
+pyjokes
+requests
+pyautogui
+keyboard
+playwright
+pyyaml
+certifi
+comtypes
+loguru
