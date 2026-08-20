@@ -19,10 +19,8 @@ pycaw
 screen-brightness-control
 pyjokes
 requests
-pyautogui
-keyboard
-playwright
 pyyaml
 certifi
 comtypes
 loguru
+pyttsx3
