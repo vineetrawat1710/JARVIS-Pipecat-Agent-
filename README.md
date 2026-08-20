@@ -74,23 +74,23 @@ Jarvis operates in two distinct phases: **Offline Wake Phase** and **Active Sess
 ```mermaid
 graph TD
     A[Microphone Input] --> B{Wake Word Detected?}
-    B -- No --> C[Silero VAD + Local Whisper Tiny]
+    B -->|No| C[Silero VAD & Local Whisper Tiny]
     C --> A
-    B -- Yes --> D[Activate Pipecat Pipeline]
+    B -->|Yes| D[Activate Pipecat Pipeline]
     
     D --> E[Silero VAD Filter]
-    E --> F[Deepgram STT nova-3]
-    F --> G[Groq LLM llama-3.3-70b]
+    E --> F[Deepgram STT]
+    F --> G[Groq LLM]
     
-    G -- "Tool Needed" --> H[Execute Python Function]
+    G -->|Tool Needed| H[Execute Python Function]
     H --> G
     
-    G -- "Text Response" --> I[Kokoro TTS bm_fable]
+    G -->|Text Response| I[Kokoro TTS]
     I --> J[Speaker Output]
     
-    J --> K{Said 'Goodbye'?}
-    K -- Yes --> C
-    K -- No --> E
+    J --> K{User says Goodbye?}
+    K -->|Yes| C
+    K -->|No| E
 ```
 
 ### Core Technologies
